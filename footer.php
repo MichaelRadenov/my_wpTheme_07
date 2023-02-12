@@ -6,15 +6,16 @@
  * @package me_myself_&_I_Theme
  */
 ?>
-                <footer>
+<footer>
 
 
-                </footer>
-            </div>
-        </div>
+</footer>
+</div>
+</div>
 <?php
 wp_footer();
 ?>
 
-    </body>
+</body>
+
 </html>

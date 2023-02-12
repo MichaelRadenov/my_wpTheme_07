@@ -3,7 +3,7 @@
 /**
  * header file
  * 
- * @package me_myself_&_I_Theme
+ * @package My Theme
  */
 ?>
 
@@ -32,6 +32,3 @@
         </header>
 
         <div id="content" class="site-content">
-
-
-  

@@ -3,11 +3,18 @@
 /**
  * the Theme functions file
  * 
- * @package me_myself_&_I_Theme
+ * @package My Theme
  */
 
- 
-//print_r(get_stylesheet_uri()        . '/assets/src/library/css/bootstrap.min.css');
+
+if (!defined('MY_THEME_DIR_PATH')) {
+    define('MY_THEME_DIR_PATH', untrailingslashit(get_template_directory()));
+}
+
+
+require MY_THEME_DIR_PATH . '/inc/helpers/autoloader.php';
+
+//print_r(MY_THEME_DIR_PATH);
 //wp_die();
 
 

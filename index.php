@@ -3,7 +3,7 @@
 /**
  * Index template file.
  *
- * @package me_myself_&_I_Theme
+ * @package My Theme
  * 
  * The main template file
  *

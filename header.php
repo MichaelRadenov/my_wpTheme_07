@@ -1,10 +1,11 @@
 <?php
 
-    /**
-     * header file
-     * @package My Thenme
-     */
-    ?>
+/**
+ * header file
+ * 
+ * @package me_myself_&_I_Theme
+ */
+?>
 
     <!doctype html>
     <html <?php language_attributes() ?>>
@@ -30,7 +31,7 @@
                 <?php get_template_part('/template-parts/header-parts/navbar'); ?>
             </header>
 
-            <div id="content" class="site-content">
+        <div id="content" class="site-content">
 
 
   

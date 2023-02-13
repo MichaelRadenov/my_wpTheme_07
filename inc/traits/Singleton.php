@@ -24,25 +24,25 @@
         final public static function get_my_instances() {
 
             /**
-             * Collection of instance.
+             * Collection of instances.
              *
              * @var array
              */
             static $instance = [];
 
             
-            $called_class = get_called_class();
+            $class_called = get_called_class();
 
-            if ( ! isset( $instance[ $called_class ] ) ) {
+            if ( ! isset( $instance[ $class_called ] ) ) {
 
-                $instance[ $called_class ] = new $called_class();
+                $instance[ $class_called ] = new $class_called();
 
             
-                do_action( sprintf( 'aquila_theme_singleton_init_%s', $called_class ) );
+                do_action( sprintf( 'aquila_theme_singleton_init_%s', $class_called ) );
 
             }
 
-            return $instance[ $called_class ];
+            return $instance[ $class_called ];
 
         }
 

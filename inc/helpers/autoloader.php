@@ -41,9 +41,9 @@
         }
 
 
-//        echo '<pre>';
-//        print_r($path);
-//        wp_die();
+        echo '<pre>';
+        print_r($path);
+ //       wp_die();
 
 
 
@@ -88,6 +88,10 @@
             // We already making sure that file is exists and valid.
             require_once( $resource_path ); // phpcs:ignore
         }
+
+        echo '<pre>';
+        print_r($path);
+ //       wp_die();
 
     }
 

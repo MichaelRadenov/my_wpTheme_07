@@ -36,7 +36,7 @@ require_once MY_THEME_DIR_PATH . '/inc/traits/Singleton.php';
         
             // regestring styles 
             wp_register_style ('main-css'     , get_stylesheet_uri()                                                          , [        ], filemtime(MY_THEME_DIR_PATH . '/style.css'     ), 'all');
-            wp_register_style ('bootstrap-css', MY_THEME_DIR_URI   . '/assets/src/library/css/bootstrap.min.css', [        ],           false                                        , 'all');
+            wp_register_style ('bootstrap-css', MY_THEME_DIR_URI   . '/assets/src/library/css/bootstrap.min.css'              , [        ],           false                                 , 'all');
     
                     
             // enqueueing styles
@@ -49,7 +49,7 @@ require_once MY_THEME_DIR_PATH . '/inc/traits/Singleton.php';
 
             // regestring scripts
             wp_register_script('main-js'      , MY_THEME_DIR_URI     . '/assets/main.js'                          , [        ], filemtime(MY_THEME_DIR_PATH . '/assets/main.js'),  true);
-            wp_register_script('bootstrap-js' , MY_THEME_DIR_URI     . '/assets/src/library/js/bootstrap.min.js'  , ['jquery'],           false                                        ,  true);
+            wp_register_script('bootstrap-js' , MY_THEME_DIR_URI     . '/assets/src/library/js/bootstrap.min.js'  , ['jquery'],           false                                 ,  true);
 
             // enqueueing scripts   
             wp_enqueue_script('main-js'     );

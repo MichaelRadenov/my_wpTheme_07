@@ -2,8 +2,12 @@
     /**
      * Autoloader file for theme.
      *
-     * @package MyTheme
-     */
+     * This is an insanely, unnecessarily complicated autoloader, 
+     * with only one purpose ... 
+     * ... to force you naming classes against all classes naming conventions
+     * 14.01.2023.
+    */
+
 
     namespace MyTheme\Inc\Helpers;
 
@@ -19,38 +23,52 @@
         $namespace_root = 'MyTheme\\';
         $resource       = trim( $resource, '\\' );
 
+                    //**************** */
+                    //echo '<pre>';
+                    //print_r('resource name:' . $resource);
+                    //wp_die();
+                    //**************** */
+
+
         if ( empty( $resource ) || strpos( $resource, '\\' ) === false || strpos( $resource, $namespace_root ) !== 0 ) {
-            // Not our namespace, bail out.
+            // Not my namespace, bail out.
             return;
         }
 
-        // Remove our root namespace.
+        // Remove my root namespace.
         $resource = str_replace( $namespace_root, '', $resource );
 
         $path = explode(
             '\\',
-            str_replace( '_', '-', strtolower( $resource ) )
+            str_replace( '_', '-', $resource )
+
         );
+
+                    //**************** */
+                    //echo '<pre>';
+                    //print_r($path);
+                    //wp_die();
+                    //**************** */
 
         /**
          * Time to determine which type of resource path it is,
-         * so that we can deduce the correct file path for it.
+         * so that I can deduce the correct file path for it.
          */
         if ( empty( $path[0] ) || empty( $path[1] ) ) {
             return;
         }
 
-
-        echo '<pre>';
-        print_r($path);
- //       wp_die();
-
+                    //**************** */
+                    //echo '<pre>';
+                    //print_r($resource);
+                    //wp_die();
+                    //**************** */
 
 
         $directory = '';
         $file_name = '';
 
-        if ( 'inc' === $path[0] ) {
+        if ( 'Inc' === $path[0] ) {
 
             switch ( $path[1] ) {
                 case 'traits':
@@ -71,7 +89,7 @@
                     }
                 default:
                     $directory = 'classes';
-                    $file_name = sprintf( 'class-%s', trim( strtolower( $path[1] ) ) );
+                    $file_name = sprintf(trim( $path[2] ) );
                     break;
             }
 
@@ -89,9 +107,20 @@
             require_once( $resource_path ); // phpcs:ignore
         }
 
-        echo '<pre>';
-        print_r($path);
- //       wp_die();
+                    //**************** */
+                    //require_once( MY_THEME_DIR_PATH . '/inc/classes/ThemeStarter.php' ); 
+                    //echo '<pre>';
+                    //print_r('resource name:' . $resource);
+                    //echo '<pre>';
+                    //print_r('dir name:' . $directory);
+                    //echo '<pre>';
+                    //print_r('flename:' . $file_name );
+                    //echo '<pre>';
+                    //print_r('resource path name:                 ' . $resource_path );
+                    //echo '<pre>';
+                    //print_r('my require_once resource path name: ' . MY_THEME_DIR_PATH . '/inc/classes/ThemeStarter.php');
+                    //wp_die();
+
 
     }
 

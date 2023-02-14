@@ -18,8 +18,7 @@ use MyTheme\Inc\Traits\Singleton;
         }
 
         public static function my_test_function() {
-            echo "something";
-
+          
         }
 
 

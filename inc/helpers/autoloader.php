@@ -63,7 +63,14 @@
                     //print_r($resource);
                     //wp_die();
                     //**************** */
+                    //**************** */
+                    //$class_instances = [];
+                    //array_push($class_instances, $resource);
+                    //print_r( $class_instances);
 
+                    //wp_die();
+                    //**************** */
+                    
 
         $directory = '';
         $file_name = '';
@@ -71,10 +78,14 @@
         if ( 'Inc' === $path[0] ) {
 
             switch ( $path[1] ) {
-                case 'traits':
+                case 'Traits':
                     $directory = 'traits';
-                    $file_name = sprintf( 'trait-%s', trim( strtolower( $path[2] ) ) );
+                    //$file_name = sprintf( 'trait-%s', trim( strtolower( $path[2] ) ) );
+                    $file_name = sprintf(trim( $path[2] ) );
                     break;
+
+                    
+
 
                 case 'widgets':
                 case 'blocks': // phpcs:ignore PSR2.ControlStructures.SwitchDeclaration.TerminatingComment
@@ -89,6 +100,7 @@
                     }
                 default:
                     $directory = 'classes';
+                    //$file_name = sprintf( 'trait-%s', trim( strtolower( $path[2] ) ) );
                     $file_name = sprintf(trim( $path[2] ) );
                     break;
             }
@@ -108,7 +120,7 @@
         }
 
                     //**************** */
-                    //require_once( MY_THEME_DIR_PATH . '/inc/classes/ThemeStarter.php' ); 
+                    //equire_once( MY_THEME_DIR_PATH . '/inc/classes/ThemeStarter.php' ); 
                     //echo '<pre>';
                     //print_r('resource name:' . $resource);
                     //echo '<pre>';
@@ -125,3 +137,4 @@
     }
 
     spl_autoload_register( '\MyTheme\Inc\Helpers\autoloader' );
+    

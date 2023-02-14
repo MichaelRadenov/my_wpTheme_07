@@ -6,8 +6,9 @@
      * @ My Theme
      */
 
-     use  \MyTheme\Inc\Classes\ThemeStarter;
-     use  \MyTheme\Inc\Classes\AnotherClass;
+     use \MyTheme\Inc\Classes\ThemeStarter;
+     use \MyTheme\Inc\Classes\AnotherClass;
+     
 
 
     if (! defined('MY_THEME_DIR_PATH')) {
@@ -20,6 +21,8 @@
 
                 //**************** */
                 //require_once MY_THEME_DIR_PATH . '/inc/classes/ThemeStarter.php';
+                //**************** */
+
     require_once MY_THEME_DIR_PATH . '/inc/helpers/autoloader.php';
 
 

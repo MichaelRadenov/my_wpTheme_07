@@ -21,7 +21,7 @@
          *
          * @return object Singleton instance of the class.
          */
-        final public static function get_my_instances() {
+        final public static function get_my_class_instance() {
 
             /**
              * Collection of instances.
@@ -38,7 +38,7 @@
                 $instance[ $class_called ] = new $class_called();
 
             
-                do_action( sprintf( 'aquila_theme_singleton_init_%s', $class_called ) );
+                //do_action( sprintf( 'aquila_theme_singleton_init_%s', $class_called ) );
 
             }
 

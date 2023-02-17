@@ -29,8 +29,7 @@
     function function_that_gets_my_theme_class_instances() {
 
         
-        ThemeStarter::get_my_instances();
-        AnotherClass::my_test_function();
+        ThemeStarter::get_my_class_instance();
         
     }
 

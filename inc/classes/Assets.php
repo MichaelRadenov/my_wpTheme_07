@@ -11,15 +11,16 @@
     class Assets {
 
         use Singleton;
+        
 
         protected function __construct() {
             
-            $this->set_my_hooks();
+            $this->set_my_assets_hooks();
             
         }
         
 
-        protected function set_my_hooks() {
+        protected function set_my_assets_hooks() {
 
         
             add_action('wp_enqueue_scripts', [$this, 'my_enqueue_styles_func' ]);
@@ -52,6 +53,8 @@
             // enqueueing scripts   
             wp_enqueue_script('main-js'     );
             wp_enqueue_script('bootstrap-js');
+
+            
 
         }
 

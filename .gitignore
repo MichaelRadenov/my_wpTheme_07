@@ -27,4 +27,9 @@ Thumbs.db
 sftp-config.json
 *.sublime-project
 *.sublime-workspace
-assets/src/library/
+**/assets
+#assets/images/
+#assets/src/library/
+
+
+

@@ -17,6 +17,8 @@
         protected function __construct() {
 
             Assets::get_my_class_instance();
+            Menus ::get_my_class_instance();
+            
             $this->set_my_theme_starter_hooks();
             
            
@@ -35,6 +37,11 @@
           
 
         }
+
+        /*_______________________________________________________________________________
+        _________________________________________________________________________________ */
+
+        
                         //  add_theme_support() features
                         /*   
                             add_theme_support() features
@@ -69,6 +76,9 @@
                             'widgets'
                             'widgets-block-editor'
                         */
+        /*_______________________________________________________________________________
+        _________________________________________________________________________________ */
+
 
         function my_theme_assets_setup()    {
 
@@ -118,7 +128,7 @@
              * Wide Alignment
              * https://developer.wordpress.org/block-editor/developers/themes/theme-support/#wide-alignment
              */
-		    add_theme_support( 'align-wide' );
+		    add_theme_support('align-wide'                         );
             add_theme_support('align-wide'                         );
             add_theme_support('widgets-block-editor'               );
             
@@ -157,7 +167,8 @@
 
         }
 
-
+        /*_______________________________________________________________________________
+        _________________________________________________________________________________ */
 
         /* -- a može i ovako */
 

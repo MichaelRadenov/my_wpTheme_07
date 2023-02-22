@@ -71,9 +71,9 @@
 
             if (! empty($menu_items) && is_array($menu_items)) {
 
-                foreach ($menu_items as $menu) {
-                    if (intval($menu->menu_item_parent) === $item_parent_id_value)    {
-                        array_push($child_menu_items, $menu);
+                foreach ($menu_items as $item) {
+                    if (intval($item->menu_item_parent) === $item_parent_id_value)    {
+                        array_push($child_menu_items, $item);
                     }
                 }
 

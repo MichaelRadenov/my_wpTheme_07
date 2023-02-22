@@ -162,7 +162,7 @@
             global $content_with;
 
             if (! isset($content_with)) {
-                $content_with = 1140;
+                $content_with = 1240;
             }           
 
         }

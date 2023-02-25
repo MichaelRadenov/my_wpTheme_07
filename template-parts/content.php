@@ -1,29 +1,19 @@
-<?php 
+<?php
 /**
- * The default blo template for displaying blog content
- * 
- *                     for now!
- * 
+ * Content template
+ *
+ * @package aquila
  */
 
-global $index;
-global $number_of_columns;
+$container_classes = !empty( $args['container_classes'] ) ? $args['container_classes'] : 'mb-5';
+?>
 
-if ($index % $number_of_columns == 0) { ?>
-                    
-    <div class="row">
-    
-        <?php }  ?>
-        
-            <div class="col-lg-<?php echo 12/$number_of_columns?> col-md-6 col-sm-12">
-                <?php echo $n = 'rendering order number: ' . $index+1;?>
-                <h1> <?php the_title();?></h1>
-                <div><?php the_excerpt();?></div> 
-            </div>                                                                             
-            
-            <?php $index ++;
-
-            if ($index != 0 && $index % $number_of_columns == 0) { ?>
-        
-    </div><!-- class="row" -->                                  
-        <?php }
+<article id="post-<?php the_ID(); ?>" <?php post_class( $container_classes ); ?>>
+Content file works
+	<?php
+        get_template_part('template-parts/blog/post-entery-content');
+        get_template_part('template-parts/blog/post-entery-footer');
+        get_template_part('template-parts/blog/post-entery-header');
+        get_template_part('template-parts/blog/post-entery-meta');	
+	?>
+</article>

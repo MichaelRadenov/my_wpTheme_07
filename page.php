@@ -22,19 +22,17 @@ get_header();
                             <?php if ( is_home() && ! is_front_page() ) : ?>
                                     
                                     <header class="mt-5">
-                                        <h1 class="page-title">From index.php file ... _<?php single_post_title(); ?></h1>
+                                        <h1 class="page-title">Sidarta_<?php single_post_title(); ?></h1>
                                     </header>
                             
                             <?php endif;
-                
-                            $index = 0;
-                            $number_of_columns = 3;
-
-                            while(have_posts()) : the_post();                                                       
+                                          
+                            while(have_posts()) : the_post();                                                       ?>                            
                             
-                                get_template_part('template-parts/content');
+                                <h1> <?php the_title();?></h1>                                
+                                <div><?php the_content();?></div>                                   
 
-                            endwhile; ?>                                                                   
+                           <?php endwhile; ?>                                                                   
                                             
                     <?php endif ?>                    
             </main>

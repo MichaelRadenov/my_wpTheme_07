@@ -16,12 +16,11 @@
 
         protected function __construct() {
 
-            Assets::get_my_class_instance();
-            Menus ::get_my_class_instance();
+            Menus  ::get_my_class_instance();
+            Assets ::get_my_class_instance();
+            MetaBox::get_my_class_instance();
             
-            $this->set_my_theme_starter_hooks();
-            
-           
+            $this->set_my_theme_starter_hooks();                      
         }
         
 
@@ -34,8 +33,7 @@
             add_action( 'after_setup_theme', [$this, 'my_theme_custom_logo_setup'      ]);
             add_action( 'after_setup_theme', [$this, 'my_theme_custom_header_setup'    ]);
             add_action( 'after_setup_theme', [$this, 'my_theme_custom_background_setup']);
-          
-
+    
         }
 
         /*_______________________________________________________________________________
@@ -89,15 +87,25 @@
                 'comment-form', 
                 'gallery',
                 'caption',)                                        
-                                                                   );
+                );
+
+
             /**
              * Adding this will allow you to select the featured image on posts and pages.
              *
              * https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
              */
-            add_theme_support('post-thumbnails'                    );
+            add_theme_support('post-thumbnails');
 
-            add_theme_support('automatic-feed-links'               );
+
+            /**
+             * Register image sizes.
+             */
+            add_image_size('featured-thumbnail', 350, 233, true);
+
+
+            add_theme_support('automatic-feed-links');
+
 
             // Add theme support for selective refresh for widgets.
             /**
@@ -109,6 +117,7 @@
              */
             add_theme_support('customize-selective-refresh-widgets');
 
+
             //Gutenberg assets
             /**
              *  Some blocks in Gutenberg like tables, quotes, separator benefit from structural styles
@@ -117,7 +126,8 @@
              *  https://make.wordpress.org/core/2018/06/05/whats-new-in-gutenberg-5th-june/, 
              *  https://developer.wordpress.org/block-editor/developers/themes/theme-support/#default-block-styles
              */
-            add_theme_support('wp-block-styles'                    );
+            add_theme_support('wp-block-styles');
+
 
             /**
              * Some blocks such as the image block have the possibility to define
@@ -128,9 +138,10 @@
              * Wide Alignment
              * https://developer.wordpress.org/block-editor/developers/themes/theme-support/#wide-alignment
              */
-		    add_theme_support('align-wide'                         );
-            add_theme_support('align-wide'                         );
-            add_theme_support('widgets-block-editor'               );
+		    add_theme_support('align-wide');
+            add_theme_support('align-wide');
+            add_theme_support('widgets-block-editor');   
+
             
             /**
              *
@@ -143,28 +154,32 @@
              * You can change the name of the file or path and replace the path here.             *
              * 
              * Description                                                                          
-             * The parameter $stylesheet is the name of the stylesheet, relative to the theme root. It also accepts an array of stylesheets.
-             * It is optional and defaults to ‘editor-style.css’.                                                                          
+             * The parameter $stylesheet is the name of the stylesheet, relative to the theme root. 
+             * It also accepts an array of stylesheets.
+             * It is optional and defaults to ‘editor-style.css’. 
+             *                                                                          
              * This function automatically adds another stylesheet with -rtl prefix, e.g. editor-style-rtl.css.
              * If that file doesn’t exist, it is removed before adding the stylesheet(s) to TinyMCE.
-             * If an array of stylesheets is passed to add_editor_style() , RTL is only added for the first stylesheet.                                                                          
+             * If an array of stylesheets is passed to add_editor_style() ,
+             *  RTL is only added for the first stylesheet.
+             * 
              * Since version 3.4 the TinyMCE body has .rtl CSS class.
              * It is a better option to use that class and add any RTL styles to the main stylesheet.                                                                
              * 
              * https://developer.wordpress.org/reference/functions/add_editor_style/
              */
-            add_editor_style( 'assets/build/css/editor.css' );
+            add_editor_style('assets/build/css/editor.css');
+
 
             // Remove the core block patterns
-            remove_theme_support( 'core-block-patterns' );
+            remove_theme_support('core-block-patterns');
 
 
             global $content_with;
 
             if (! isset($content_with)) {
                 $content_with = 1240;
-            }           
-
+            }         
         }
 
         /*_______________________________________________________________________________
@@ -188,7 +203,6 @@
                 'header-text'          => array( 'site-title', 'site-description' ),
                 'unlink-homepage-logo' => true, 
             );
-
 
             /**
              * Custom logo.
@@ -241,9 +255,7 @@
 		        'flex-height'            => true,
             );
 
-
             add_theme_support( 'custom-header', $args );
-
 
             register_default_headers( array(
 
@@ -270,8 +282,7 @@
                     'description'   => __( 'Maleficent', 'me-myself-n-i-theme' )
                 )
             ) 
-            );
-             
+            );             
         }
 
 

@@ -22,7 +22,7 @@ get_header();
                             <?php if ( is_home() && ! is_front_page() ) : ?>
                                     
                                     <header class="mt-5">
-                                        <h1 class="page-title">From index.php file ... _<?php single_post_title(); ?></h1>
+                                        <h1 class="page-title">From home.php file ... _<?php single_post_title(); ?></h1>
                                     </header>
                             
                             <?php endif;
@@ -32,7 +32,7 @@ get_header();
 
                             while(have_posts()) : the_post();                                                       
                             
-                                get_template_part('template-parts/content');
+                                get_template_part('template-parts/blog-page');
 
                             endwhile; ?>                                                                   
                                             

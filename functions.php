@@ -19,20 +19,17 @@
         define('MY_THEME_DIR_URI', untrailingslashit(get_template_directory_uri()));
     }
 
-                //**************** */
-                //require_once MY_THEME_DIR_PATH . '/inc/classes/ThemeStarter.php';
-                //**************** */
+
 
     require_once MY_THEME_DIR_PATH . '/inc/helpers/autoloader.php';
+    require_once MY_THEME_DIR_PATH . '/inc/helpers/template-tags.php';
+
 
 
     function function_that_gets_my_theme_class_instances() {
-
         
-        ThemeStarter::get_my_class_instance();
-        
+        ThemeStarter::get_my_class_instance();        
     }
-
    
     function_that_gets_my_theme_class_instances();
     

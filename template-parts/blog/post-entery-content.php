@@ -28,7 +28,8 @@
 
         }else{
 
-            my_theme_except_func( 10 );
+            my_theme_except_func();
+            my_theme_excerpt_read_more();
 
         }
 

@@ -123,7 +123,27 @@
 
         $excerpt = wp_strip_all_tags( get_the_excerpt() );
         $excerpt = substr( $excerpt, 0, $character_count );
-        $excerpt = substr( $excerpt, 0, strpos($excerpt, '') );
+        $excerpt = substr( $excerpt, 0, strpos($excerpt, '') ); /** <-- Strips out the last word ... doe not break word a half*/
 
         echo $excerpt . ' [...]';
+    }
+
+
+    /**
+     * Filter the "read more" excerpt string link to the post.
+     *
+     * @param string $more "Read more" excerpt string.
+     *
+     * @return string (Maybe) modified "read more" excerpt string.
+     */
+    function my_theme_excerpt_read_more( $read_more = '' ) {
+
+        if ( ! is_single() ) {
+            $read_more = sprintf( '<a class="my-theme-read-more text-white mt-3 btn btn-info" href="%1$s">%2$s</a>',
+                get_permalink( get_the_ID() ),
+                __( 'Read more', 'my-theme' )
+            );
+        }
+
+        echo $read_more;
     }

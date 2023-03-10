@@ -3,7 +3,7 @@
 /**
  * header file
  * 
- * @package me_myself_&_I_Theme
+ * @        My Theme
  */
 ?>
 

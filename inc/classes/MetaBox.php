@@ -77,21 +77,14 @@
             
              if ( ! current_user_can( 'edit_post', $post_id ) )  {
 
-                    // echo '<pre>';
-                    // print_r('message');
-                    // wp_die();
                 return;
             }
 
                        
             if ( ! isset( $_POST['my_meta_box_nonce_field_name'] ) || 
-                 ! wp_verify_nonce( $_POST['my_meta_box_nonce_field_name'], 'my_meta_box_nonce_action_' . $post_id)  ) {
-                    
-                    // echo '<pre>';
-                    // print_r('message');
-                    // wp_die();
-                return;
-            
+                 ! wp_verify_nonce( $_POST['my_meta_box_nonce_field_name'], 'my_meta_box_nonce_action_' . $post_id)  ) {                  
+
+                return;            
             }
             
 

@@ -15,6 +15,13 @@ Text Domain: my-theme
 */
 
 img {
-    width: inherit;
+    width: 100% ;
     height: inherit;
+}
+
+/** post-entery-meta.php*/
+.updated:not(.published) {
+
+    display: none ;
+
 }

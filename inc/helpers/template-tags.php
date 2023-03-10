@@ -16,25 +16,25 @@
      *
      * @return string
      */
-    function my_get_the_post_custom_thumbnail_func($post_id, $size = 'featured-thumbnail',$additional_attributes = [])    {
+    function my_get_the_post_custom_thumbnail_func( $post_id, $size = 'featured-thumbnail', $additional_attributes = [])    {
 
         $custom_thumbnail = [];
 
-        if ($post_id === 0)  {
+        if ( $post_id === 0 )  {
             $post_id = get_the_ID();
         } 
 
-        if(has_post_thumbnail($post_id))    {
+        if(has_post_thumbnail( $post_id ))    {
 
             $default_attribute = [
                 'loading' => 'lazy'
             ];
 
-            $attributes = array_merge($default_attribute, $additional_attributes);
+            $attributes = array_merge( $default_attribute, $additional_attributes );
 
             $custom_thumbnail = wp_get_attachment_image(
 
-                get_post_thumbnail_id($post_id),
+                get_post_thumbnail_id( $post_id ),
                 $size,
                 false,
                 $attributes
@@ -42,7 +42,7 @@
             );
 
             echo $custom_thumbnail;
-
+            // or return $custom_thumbnail, than use next function
         }           
     }
     
@@ -53,10 +53,11 @@
      * @param int    $post_id               Post ID.
      * @param string $size                  The registered image size.
      * @param array  $additional_attributes Additional attributes.
-     */
-    function my_render_post_custom_thumbnail_func($post_id, $additional_attributes, $size = 'featured-thumbnail')  {
+     * xxxxxxxxxxxxxxxxxnot out of order xxxxxxxxxxxxxxxxxxxxxxxxxxx
+     */ 
+    function my_render_post_custom_thumbnail_func( $post_id, $size = 'featured-thumbnail', $additional_attributes )  {
 
-        echo my_get_the_post_custom_thumbnail_func($post_id, $additional_attributes, $size);
+        echo my_get_the_post_custom_thumbnail_func( $post_id, $size, $additional_attributes );
 
     }
 
@@ -130,7 +131,7 @@
 
 
     /**
-     * Filter the "read more" excerpt string link to the post.
+     * rdea_more Button
      *
      * @param string $more "Read more" excerpt string.
      *
@@ -146,4 +147,17 @@
         }
 
         echo $read_more;
+    }
+
+
+    function my_tneme_pagination_func()   {
+
+        wp_link_pages(
+			[
+				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'aquila' ),
+				'after'  => '</div>',
+			]
+		);
+
+        echo('I exist ... ( my_tneme_pagination_func() )');
     }
